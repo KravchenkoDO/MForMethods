@@ -1,0 +1,6 @@
+C:\projects_CSharp\MForMethods\MethodsTasks\bin\Debug\MethodsTasks.exe.config
+C:\projects_CSharp\MForMethods\MethodsTasks\bin\Debug\MethodsTasks.exe
+C:\projects_CSharp\MForMethods\MethodsTasks\bin\Debug\MethodsTasks.pdb
+C:\projects_CSharp\MForMethods\MethodsTasks\obj\Debug\MethodsTasks.csprojResolveAssemblyReference.cache
+C:\projects_CSharp\MForMethods\MethodsTasks\obj\Debug\MethodsTasks.exe
+C:\projects_CSharp\MForMethods\MethodsTasks\obj\Debug\MethodsTasks.pdb
