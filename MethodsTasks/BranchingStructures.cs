@@ -20,7 +20,6 @@ namespace MethodsTasks
         {
             return numberA - numberB;
         }
-
         private static int CalcDiscriminant (int numberA, int numberB, int numberC)
         {
             int discriminant = numberB * numberB - 4 * numberA * numberC;
@@ -103,7 +102,6 @@ namespace MethodsTasks
             }
             return result;
         }
-
         public static double[] SolveQuadraticEquation(int numberA, int numberB, int numberC)
         {
             double[] result = new double[2];
