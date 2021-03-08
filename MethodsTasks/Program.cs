@@ -26,9 +26,12 @@ namespace MethodsTasks
             //int[,] transposeMatrix;
             //transposeMatrix = TwoDimentionalArrays.Transpose(twoDimentionalArray);
             //TwoDimentionalArrays.Print(transposeMatrix);
-            double result = Variables.SolveLinearEquation(0,12,3);
 
-            Console.WriteLine(result);
+            //double[] array = BranchingStructures.OutputInAscendingOrder(11, 2, 0);
+            //OneDimentionalArrays.Print(array);
+
+            double[] array2 = BranchingStructures.SolveQuadraticEquation(5, 15, 3);
+            OneDimentionalArrays.Print(array2);
             Console.ReadKey();
         }
     }

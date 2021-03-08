@@ -8,10 +8,10 @@ namespace MethodsTasks
 {
     class OneDimentionalArrays
     {
-        public static int[] InitializeAndFill(int size)
+        public static double[] InitializeAndFill(int size)
         {
             Random random = new Random();
-            int[] array = new int[size];
+            double[] array = new double[size];
             for (int i = 0; i < array.Length; i++)
             {
                 array[i] = random.Next(0, 101);
@@ -23,7 +23,7 @@ namespace MethodsTasks
 
 
 
-        public static void Print(int[] array)
+        public static void Print(double[] array)
         {
             for (int i = 0; i < array.Length; i++)
             {
