@@ -235,5 +235,4 @@ namespace MethodsTasks
             }
         }
     }
-    //TODO: chek all methods in Program.cs;
 }

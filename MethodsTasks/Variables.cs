@@ -8,6 +8,25 @@ namespace MethodsTasks
 {
     class Variables
     {
+        private static double DivideTwoNumbers(double numberAd, double numberBd)
+        {
+            double result = 0;
+            if (numberBd == 0)
+            {
+                throw new Exception("Number B can not be equal to 0");
+            }
+            else
+            {
+                result = numberAd / numberBd;
+            }
+            return result;
+        }
+        private static double ReminderOfTheDivision(double numberAd, double numberBd)
+        {
+            double result = 0;
+            result = numberAd % numberBd;
+            return result;
+        }
         public static double FindExpressionValue(double numberAd, double numberBd)
         {
             double resultd = 0;
@@ -42,25 +61,6 @@ namespace MethodsTasks
             }
             return result;
         }
-        private static double DivideTwoNumbers(double numberAd, double numberBd)
-        {
-            double result = 0;
-            if (numberBd == 0)
-            {
-                throw new Exception("Number B can not be equal to 0");
-            }
-            else
-            {
-                result = numberAd / numberBd;
-            }
-            return result;
-        }
-        private static double ReminderOfTheDivision(double numberAd, double numberBd)
-        {
-            double result = 0;
-            result = numberAd % numberBd;
-            return result;
-        }
         public static double SolveLinearEquation(double numberAd, double numberBd, double numberCd)
         {
             double result = 0;
@@ -72,15 +72,6 @@ namespace MethodsTasks
             {
                 result = (numberCd - numberBd) / numberAd;
             }
-            //TODO: ask about this method: is it correct?
-            //try
-            //{
-            // result = (numberCd - numberBd) / numberAd;
-            //}
-            //catch (DivideByZeroException e)
-            //{
-            //    Console.WriteLine(e.Message);
-            //}
             return result;
         }
     }
