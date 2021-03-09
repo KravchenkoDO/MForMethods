@@ -29,8 +29,10 @@ namespace MethodsTasks
                     resultd = 1.0 / numberAd * resultd;
                 }
             }
+
             return resultd;
         }
+
         public static double[] GetNumbersDividedByNumberA(int numberA)
         {
             double[] array = new double[1000 / numberA];
@@ -45,8 +47,10 @@ namespace MethodsTasks
                     array[k++] = i;
                 }
             }
+
             return array;
         }
+
         public static int FindCountPositiveIntegerElementsThatSquareLessThenNumberA(double numberA)
         {
             double sqrtA = 0;
@@ -59,8 +63,10 @@ namespace MethodsTasks
                     counter++;
                 }
             }
+
             return counter;
         }
+
         public static int GetGreaterDivider(int numberA)
         {
             int divider = 1;
@@ -72,8 +78,200 @@ namespace MethodsTasks
                     break;
                 }
             }
+
             return divider;
         }
 
+        public static int GetSumNumbersFromAToBThatDividedBySeven(int numberA, int numberB)
+        {
+            int summ = 0;
+            if (numberA > numberB)
+            {
+                for (int i = numberB; i <= numberA; i++)
+                {
+                    if (i % 7 == 0)
+                    {
+                        summ += i;
+                    }
+                }
+            }
+            else
+            {
+                for (int i = numberA; i <= numberB; i++)
+                {
+                    if (i % 7 == 0)
+                    {
+                        summ += i;
+                        ;
+                    }
+                }
+            }
+
+            return summ;
+        }
+
+        public static int FindNumberFibonacci(int numberN)
+        {
+            int fib = 0;
+            int a = 1, b = 1;
+
+            if (numberN == 1 || numberN == 2) return 1;
+            else
+            {
+                for (int i = 3; i <= numberN; i++)
+                {
+                    fib = a + b;
+                    a = b;
+                    b = fib;
+                }
+
+                return fib;
+            }
+        }
+
+        public static int FindGreatestCommonDividerByEvclidAlgorithm(int numberA, int numberB)
+        {
+            while (numberA != numberB)
+            {
+                if (numberA > numberB)
+                {
+                    numberA = numberA - numberB;
+                }
+                else
+                {
+                    numberB = numberB - numberA;
+                }
+            }
+
+            return numberA;
+        }
+
+        public static double FindNumberByHalfDivisionMethod(int numberN)
+        {
+            long left = 1;
+            long right = numberN;
+            long center = (right + left) / 2;
+            while (center * center * center != numberN)
+            {
+                if (center * center * center > numberN)
+                {
+                    right = center;
+                }
+                else
+                {
+                    left = center;
+                }
+                center = (right + left) / 2;
+            }
+
+            return center;
+
+        }
+
+        public static int CountOddNumeralsOfNumber(int numberA)
+        {
+            int partOfA = 0;
+            int counter = 0;
+
+            while (!(numberA == 0))
+            {
+                partOfA = numberA % 10;
+                if (partOfA % 2 == 1)
+                {
+                    counter++;
+                }
+
+                numberA = numberA / 10;
+            }
+
+            return counter;
+        }
+
+        public static int FindMirrorNumber(int numberN)
+        {
+            int mirrorNumber = 0;
+            int part = 0;
+
+            while (Math.Abs(numberN) > 0)
+            {
+                part = numberN % 10;
+                mirrorNumber = (part + mirrorNumber * 10);
+                numberN = numberN / 10;
+            }
+
+            return mirrorNumber;
+        }
+
+        public static double[] FindNumbersWhereSumEvenNumeralsGreaterThenSumOddNumerals(int numberN)
+        {
+            int nextNumber;
+            int part;
+            int sumEven;
+            int sumOdd;
+            double[] array = new double[numberN / 2 - 1];
+
+            ;
+            for (int i = 1, k = 0; i <= numberN; i++)
+            {
+
+
+                sumEven = 0;
+                sumOdd = 0;
+                nextNumber = i;
+                while (nextNumber > 0)
+                {
+                    part = nextNumber % 10;
+
+                    if (part % 2 == 0)
+                    {
+                        sumEven += part;
+                    }
+                    else
+                    {
+                        sumOdd += part;
+                    }
+
+                    nextNumber /= 10;
+                }
+
+                if (sumEven > sumOdd)
+                {
+                    array[k] = i;
+                    ++k;
+                }
+            }
+
+            return array;
+
+        }
+
+        public static void HaveTheSameNumerals(int numberA, int numberB)
+        {
+            int temp = 0;
+            int partA;
+            int partB;
+            string answer = string.Empty;
+            bool findAnswer = false;
+
+            answer = "Oh, no... Oh, no... Oh, no-no-no-no-no...";
+            while ((numberA > 0) && (findAnswer == false))
+            {
+                partA = numberA % 10;
+                temp = numberB;
+                while (temp > 0)
+                {
+                    partB = temp % 10;
+                    if (partA == partB)
+                    {
+                        answer = "We find it!!! Yes!!!";
+                        findAnswer = true;
+                        break;
+                    }
+                    temp = temp / 10;
+                }
+                numberA = numberA / 10;
+            }
+            Console.WriteLine(answer);
+        }
     }
 }
