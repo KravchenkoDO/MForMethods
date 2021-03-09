@@ -83,6 +83,7 @@ namespace MethodsTasks
                 {
                     if (array[i, j] > maxValue)
                     {
+                        maxValue = array[i, j];
                         maxArrIndex[0] = i;
                         maxArrIndex[1] = j;
                     }
@@ -100,6 +101,7 @@ namespace MethodsTasks
                 {
                     if (array[i, j] < minValue)
                     {
+                        minValue = array[i, j];
                         minArrIndex[0] = i;
                         minArrIndex[1] = j;
                     }

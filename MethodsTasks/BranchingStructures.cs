@@ -12,7 +12,7 @@ namespace MethodsTasks
         {
             return numberA + numberB;
         }
-        private static int MultiplyTwoNumbers (int numberA, int numberB)
+        private static int MultiplyTwoNumbers(int numberA, int numberB)
         {
             return numberA * numberB;
         }
@@ -20,11 +20,11 @@ namespace MethodsTasks
         {
             return numberA - numberB;
         }
-        private static int CalcDiscriminant (int numberA, int numberB, int numberC)
+        private static int CalcDiscriminant(int numberA, int numberB, int numberC)
         {
             int discriminant = numberB * numberB - 4 * numberA * numberC;
-            
-            if (discriminant<0)
+
+            if (discriminant < 0)
             {
                 throw new Exception("Discriminant must be greater or equal to 0");
             }
@@ -39,12 +39,12 @@ namespace MethodsTasks
             }
             else
             {
-                result  = numberA > numberB ? BranchingStructures.SumTwoNumbers(numberA, numberB) 
+                result = numberA > numberB ? BranchingStructures.SumTwoNumbers(numberA, numberB)
                 : BranchingStructures.SubtractionTwoNumbers(numberA, numberB);
             }
             return result;
         }
-        public static void DefiningQuarterOnCoordinatePlane (int X, int Y)
+        public static void DefiningQuarterOnCoordinatePlane(int X, int Y)
         {
             string planeQuarter = string.Empty;
             if (X == 0 || Y == 0) planeQuarter = " lay on axis";
@@ -52,52 +52,52 @@ namespace MethodsTasks
             else planeQuarter = Y > 0 ? " in second quarter" : " in third quarter";
             Console.WriteLine("Point A[{0},{1}]{2}", X, Y, planeQuarter);
         }
-        public static double[] OutputInAscendingOrder(int numberA, int numberB, int numberC)
+        public static double[] OutputInAscendingOrder(double numberAd, double numberBd, double numberCd)
         {
             double[] result = new double[3];
-            if (numberA > numberB && numberA > numberC)
+            if (numberAd > numberBd && numberAd > numberCd)
             {
-                if (numberB > numberC)
+                if (numberBd > numberCd)
                 {
-                    result[0] = numberA;
-                    result[1] = numberB;
-                    result[2] = numberC;
+                    result[0] = numberAd;
+                    result[1] = numberBd;
+                    result[2] = numberCd;
                 }
                 else
                 {
-                    result[0] = numberA;
-                    result[1] = numberC;
-                    result[2] = numberB;
+                    result[0] = numberAd;
+                    result[1] = numberCd;
+                    result[2] = numberBd;
                 }
             }
-            else if (numberB > numberA && numberB > numberC)
+            else if (numberBd > numberAd && numberBd > numberCd)
             {
-                if (numberA > numberC)
+                if (numberAd > numberCd)
                 {
-                    result[0] = numberB;
-                    result[1] = numberA;
-                    result[2] = numberC;
+                    result[0] = numberBd;
+                    result[1] = numberAd;
+                    result[2] = numberCd;
                 }
                 else
                 {
-                    result[0] = numberB;
-                    result[1] = numberC;
-                    result[2] = numberA;
+                    result[0] = numberBd;
+                    result[1] = numberCd;
+                    result[2] = numberAd;
                 }
             }
             else
             {
-                if (numberA > numberB)
+                if (numberAd > numberBd)
                 {
-                    result[0] = numberC;
-                    result[1] = numberA;
-                    result[2] = numberB;
+                    result[0] = numberCd;
+                    result[1] = numberAd;
+                    result[2] = numberBd;
                 }
                 else
                 {
-                    result[0] = numberC;
-                    result[1] = numberB;
-                    result[2] = numberA;
+                    result[0] = numberCd;
+                    result[1] = numberBd;
+                    result[2] = numberAd;
                 }
             }
             return result;
@@ -121,11 +121,116 @@ namespace MethodsTasks
             }
             return result;
         }
-
-            /*
-                Пользователь вводит двузначное число. Выведите в консоль прописную запись этого числа. Например при вводе “25” в консоль будет выведено “двадцать пять”.
-
-             */
-
+        public static void OutputNumberInWords(int numberInt)
+        {
+            string numberStr = string.Empty;
+            string strTens = string.Empty;
+            string strOnes = string.Empty;
+            if (numberInt < 10 && numberInt > 99)
+            {
+                throw new Exception("Number must be from 10 to 99 interval");
+            }
+            else if (numberInt >= 10 && numberInt < 20)
+            {
+                switch (numberInt)
+                {
+                    case 10:
+                        numberStr = "Ten";
+                        break;
+                    case 11:
+                        numberStr = "Eleven";
+                        break;
+                    case 12:
+                        numberStr = "Twelve";
+                        break;
+                    case 13:
+                        numberStr = "Thirteen";
+                        break;
+                    case 14:
+                        numberStr = "Fourteen";
+                        break;
+                    case 15:
+                        numberStr = "Fifteen";
+                        break;
+                    case 16:
+                        numberStr = "Sixteen";
+                        break;
+                    case 17:
+                        numberStr = "Seventeen";
+                        break;
+                    case 18:
+                        numberStr = "Eighteen";
+                        break;
+                    case 19:
+                        numberStr = "Nineteen";
+                        break;
+                }
+            }
+            else if (numberInt >= 20 && numberInt < 100)
+            {
+                switch (numberInt / 10 * 10)
+                {
+                    case 20:
+                        strTens = "Twenty";
+                        break;
+                    case 30:
+                        strTens = "Thirty";
+                        break;
+                    case 40:
+                        strTens = "Fourty";
+                        break;
+                    case 50:
+                        strTens = "Fifty";
+                        break;
+                    case 60:
+                        strTens = "Sixty";
+                        break;
+                    case 70:
+                        strTens = "Seventy";
+                        break;
+                    case 80:
+                        strTens = "Eighty";
+                        break;
+                    case 90:
+                        strTens = "Ninety";
+                        break;
+                }
+                switch (numberInt % 10)
+                {
+                    case 0:
+                        strOnes = "";
+                        break;
+                    case 1:
+                        strOnes = "One";
+                        break;
+                    case 2:
+                        strOnes = "Two";
+                        break;
+                    case 3:
+                        strOnes = "Three";
+                        break;
+                    case 4:
+                        strOnes = "Four";
+                        break;
+                    case 5:
+                        strOnes = "Five";
+                        break;
+                    case 6:
+                        strOnes = "Six";
+                        break;
+                    case 7:
+                        strOnes = "Seven";
+                        break;
+                    case 8:
+                        strOnes = "Eight";
+                        break;
+                    case 9:
+                        strOnes = "Nine";
+                        break;
+                }
+                numberStr = strTens + " " + strOnes;
+            }
+            Console.WriteLine(numberStr);
+        }
     }
 }

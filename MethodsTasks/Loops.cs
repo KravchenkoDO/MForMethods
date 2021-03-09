@@ -8,5 +8,6 @@ namespace MethodsTasks
 {
     class Loops
     {
+
     }
 }
