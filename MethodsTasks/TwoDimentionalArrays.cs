@@ -119,62 +119,13 @@ namespace MethodsTasks
             {
                 for (int j = 0; j <= columnCount; j++)
                 {
-                    //Upper row
-                    if (i == 0 && j == 0)
-                    {
-                        if ((array[i, j] > array[i + 1, j])
-                            && (array[i, j] > array[i, j + 1])) counter++;
-                    }
-                    else if ((i == 0) && (j > 0) && (j < columnCount))
-                    {
-                        if ((array[i, j] > array[i, j - 1])
-                            && (array[i, j] > array[i, j + 1])
-                            && (array[i, j] > array[i + 1, j])) counter++;
-                    }
-                    else if ((i == 0) && (j == columnCount))
-                    {
-                        if ((array[i, j] > array[i, j - 1])
-                            && (array[i, j] > array[i + 1, j])) counter++;
-                    }
-                    //Left column
-                    else if ((i > 0) && (i < rowCount) && (j == 0))
-                    {
-                        if ((array[i, j] > array[i - 1, j])
-                            && (array[i, j] > array[i + 1, j])
-                            && (array[i, j] > array[i, j + 1])) counter++;
-                    }
-                    //Right column
-                    else if ((i > 0) && (i < rowCount) && (j == rowCount))
-                    {
-                        if ((array[i, j] > array[i, j - 1])
-                            && (array[i, j] > array[i - 1, j])
-                            && (array[i, j] > array[i + 1, j])) counter++;
-                    }
-                    //Lower row
-                    else if ((i == rowCount) && (j == 0))
-                    {
-                        if ((array[i, j] > array[i - 1, j])
-                            && (array[i, j] > array[i, j + 1])) counter++;
-                    }
-                    else if ((i == rowCount) && (j > 0) && (j < columnCount))
-                    {
-                        if ((array[i, j] > array[i - 1, j])
-                            && (array[i, j] > array[i, j + 1])
-                            && (array[i, j] > array[i, j - 1])) counter++;
-                    }
-                    else if ((i == rowCount) && (j == columnCount))
-                    {
-                        if ((array[i, j] > array[i - 1, j])
-                            && (array[i, j] > array[i, j - 1])) counter++;
-                    }
-                    //Middle
-                    else
-                    {
-                        if (array[i, j] > array[i - 1, j] &&
-                            array[i, j] > array[i + 1, j] &&
-                            array[i, j] > array[i, j - 1] &&
-                            array[i, j] > array[i, j + 1]) counter++;
-                    }
+                    if ((i <= 0 || array[i - 1, j] < array[i, j])
+                        &&(i >= rowCount || array[i + 1, j] < array[i, j])
+                        &&(j <= 0 || array[i, j - 1] < array[i, j])
+                        &&((j >= columnCount || array[i, j + 1] < array[i, j]))
+                     {
+                        counter++;
+                     }
                 }
             }
             return counter;
