@@ -10,8 +10,9 @@ namespace MethodsTasks
     {
         static void Main(string[] args)
         {
-
-            Console.WriteLine(Loops.GetGreaterDivider(11125));
+            OneDimentionalArrays.Print(BranchingStructures.SolveQuadraticEquation(12,6,0));
+            //Console.WriteLine(BranchingStructures.OutputNumberInWords(99));
+            //Console.WriteLine(BranchingStructures.SumOrMultiplyOrSubstraction(5,5));
             Console.ReadKey();
         }
     }

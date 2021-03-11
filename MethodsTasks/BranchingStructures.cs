@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MethodsTasks
 {
-    class BranchingStructures
+    public class BranchingStructures
     {
         private static int SumTwoNumbers(int numberA, int numberB)
         {
@@ -35,7 +35,7 @@ namespace MethodsTasks
             int result = 0;
             if (numberA == numberB)
             {
-                BranchingStructures.MultiplyTwoNumbers(numberA, numberB);
+                result = BranchingStructures.MultiplyTwoNumbers(numberA, numberB);
             }
             else
             {
@@ -44,16 +44,17 @@ namespace MethodsTasks
             }
             return result;
         }
-        public static void DefiningQuarterOnCoordinatePlane(int X, int Y)
+        public static int DefiningQuarterOnCoordinatePlane(int X, int Y)
         {
-            string planeQuarter = string.Empty;
-            if (X == 0 || Y == 0) planeQuarter = " lay on axis";
-            else if (X > 0) planeQuarter = Y > 0 ? " in first quarter" : " in fourth quarter";
-            else planeQuarter = Y > 0 ? " in second quarter" : " in third quarter";
-            Console.WriteLine("Point A[{0},{1}]{2}", X, Y, planeQuarter);
+            int planeQuarter;
+            if (X == 0 || Y == 0) planeQuarter = 0;
+            else if (X > 0) planeQuarter = Y > 0 ? 1 : 4;
+            else planeQuarter = Y > 0 ? 2 : 3;
+            return planeQuarter;
         }
         public static double[] OutputInAscendingOrder(double numberAd, double numberBd, double numberCd)
         {
+            //TODO: Fix this Bull Shit!!!
             double[] result = new double[3];
             if (numberAd > numberBd && numberAd > numberCd)
             {
@@ -121,16 +122,17 @@ namespace MethodsTasks
             }
             return result;
         }
-        public static void OutputNumberInWords(int numberInt)
+
+        public static string OutputNumberInWords(int numberInt)
         {
             string numberStr = string.Empty;
             string strTens = string.Empty;
             string strOnes = string.Empty;
-            if (numberInt < 10 && numberInt > 99)
+            if (numberInt < 10 || numberInt > 99)
             {
                 throw new Exception("Number must be from 10 to 99 interval");
             }
-            else if (numberInt >= 10 && numberInt < 20)
+            else if (numberInt < 20)
             {
                 switch (numberInt)
                 {
@@ -166,7 +168,7 @@ namespace MethodsTasks
                         break;
                 }
             }
-            else if (numberInt >= 20 && numberInt < 100)
+            else
             {
                 switch (numberInt / 10 * 10)
                 {
@@ -195,6 +197,7 @@ namespace MethodsTasks
                         strTens = "Ninety";
                         break;
                 }
+
                 switch (numberInt % 10)
                 {
                     case 0:
@@ -228,9 +231,11 @@ namespace MethodsTasks
                         strOnes = "Nine";
                         break;
                 }
+
                 numberStr = strTens + " " + strOnes;
             }
-            Console.WriteLine(numberStr);
+
+            return numberStr;
         }
     }
 }

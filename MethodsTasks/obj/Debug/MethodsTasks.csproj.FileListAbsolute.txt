@@ -17,3 +17,10 @@ E:\DevEdu_practice\MForMethods\MethodsTasks\obj\Debug\MethodsTasks.pdb
 E:\DevEdu_practice\MForMethods\MethodsTasks\bin\Debug\MethodsTasks.exe.config
 E:\DevEdu_practice\MForMethods\MethodsTasks\bin\Debug\MethodsTasks.exe
 E:\DevEdu_practice\MForMethods\MethodsTasks\bin\Debug\MethodsTasks.pdb
+E:\DevEduCourses\MForMethods\MethodsTasks\bin\Debug\MethodsTasks.exe.config
+E:\DevEduCourses\MForMethods\MethodsTasks\bin\Debug\MethodsTasks.exe
+E:\DevEduCourses\MForMethods\MethodsTasks\bin\Debug\MethodsTasks.pdb
+E:\DevEduCourses\MForMethods\MethodsTasks\obj\Debug\MethodsTasks.csprojAssemblyReference.cache
+E:\DevEduCourses\MForMethods\MethodsTasks\obj\Debug\MethodsTasks.csproj.CoreCompileInputs.cache
+E:\DevEduCourses\MForMethods\MethodsTasks\obj\Debug\MethodsTasks.exe
+E:\DevEduCourses\MForMethods\MethodsTasks\obj\Debug\MethodsTasks.pdb

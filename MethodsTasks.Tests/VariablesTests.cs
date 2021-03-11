@@ -44,6 +44,9 @@ namespace MethodsTasks.Tests
         }
 
         [TestCase(2,5,5,0)]
+        [TestCase(10,-4,-6, -0.2d)]
+        [TestCase(10, -4, 6, 1)]
+        [TestCase(0.35d, 1.5d, 5.0d, 10)]
         public void SolveLinearEquationTests(double numberAd, double numberBd, double numberCd, double expected)
         {
             double actual = Variables.SolveLinearEquation(numberAd, numberBd, numberCd);
