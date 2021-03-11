@@ -122,7 +122,7 @@ namespace MethodsTasks
                     if ((i <= 0 || array[i - 1, j] < array[i, j])
                         &&(i >= rowCount || array[i + 1, j] < array[i, j])
                         &&(j <= 0 || array[i, j - 1] < array[i, j])
-                        &&((j >= columnCount || array[i, j + 1] < array[i, j]))
+                        &&(j >= columnCount || array[i, j + 1] < array[i, j]))
                      {
                         counter++;
                      }

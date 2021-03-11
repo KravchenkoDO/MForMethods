@@ -10,3 +10,10 @@ C:\projects_CSharp\DevEdu_lessons\MForMethods\MethodsTasks\obj\Debug\MethodsTask
 C:\projects_CSharp\DevEdu_lessons\MForMethods\MethodsTasks\obj\Debug\MethodsTasks.csprojResolveAssemblyReference.cache
 C:\projects_CSharp\DevEdu_lessons\MForMethods\MethodsTasks\bin\Debug\MethodsTasks.exe
 C:\projects_CSharp\DevEdu_lessons\MForMethods\MethodsTasks\bin\Debug\MethodsTasks.pdb
+E:\DevEdu_practice\MForMethods\MethodsTasks\obj\Debug\MethodsTasks.csprojAssemblyReference.cache
+E:\DevEdu_practice\MForMethods\MethodsTasks\obj\Debug\MethodsTasks.csproj.CoreCompileInputs.cache
+E:\DevEdu_practice\MForMethods\MethodsTasks\obj\Debug\MethodsTasks.exe
+E:\DevEdu_practice\MForMethods\MethodsTasks\obj\Debug\MethodsTasks.pdb
+E:\DevEdu_practice\MForMethods\MethodsTasks\bin\Debug\MethodsTasks.exe.config
+E:\DevEdu_practice\MForMethods\MethodsTasks\bin\Debug\MethodsTasks.exe
+E:\DevEdu_practice\MForMethods\MethodsTasks\bin\Debug\MethodsTasks.pdb

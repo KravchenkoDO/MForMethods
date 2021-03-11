@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MethodsTasks
 {
-    class Variables
+    public class Variables
     {
         private static double DivideTwoNumbers(double numberAd, double numberBd)
         {
@@ -74,5 +74,32 @@ namespace MethodsTasks
             }
             return result;
         }
+        public static double[] DeriveEquationOfStraightLinePassingThroughPoints (double abscissaA, double ordinateA, double abscissaB, double ordinateB)
+        {
+
+            /* 
+            * Y = AX + B;
+            * A = (y1 - y2) / (x1 - x2);
+            * B = y2 - A * x2;
+            */
+            double[] result = new double[2];
+
+            if (abscissaA == abscissaB)
+            {
+                throw new Exception("Abscissa of point A can't be equal to abscissa of point B");      
+            }
+            else
+            {
+                result[0] = (ordinateA - ordinateB) / (abscissaA - abscissaB);
+                result[1] = ordinateB - result[0] * abscissaB;
+            }
+            return result;
+        }
+
+        
+
+
+
+
     }
 }
