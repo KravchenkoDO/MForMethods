@@ -1,0 +1,4 @@
+E:\MForMethods\MForMethods.Tests\obj\Debug\netcoreapp3.1\MForMethods.Tests.csprojAssemblyReference.cache
+E:\MForMethods\MForMethods.Tests\obj\Debug\netcoreapp3.1\MForMethods.Tests.AssemblyInfoInputs.cache
+E:\MForMethods\MForMethods.Tests\obj\Debug\netcoreapp3.1\MForMethods.Tests.AssemblyInfo.cs
+E:\MForMethods\MForMethods.Tests\obj\Debug\netcoreapp3.1\MForMethods.Tests.csproj.CoreCompileInputs.cache
