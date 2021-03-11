@@ -50,8 +50,11 @@ namespace MethodsTasks.Tests
 
             Assert.AreEqual(expected, actual);
         }
+        
         [TestCase (1,3,4,3, new double[] {0d, 3d })]
         [TestCase(10, 15, 8, 5, new double[] { 5d, -35d })]
+        [TestCase(-1, -6, 1, 2, new double[] { 4d, -2d })]
+        [TestCase(6, 0, 0, 6, new double[] { -1d, 6d })]
 
         public void DeriveEquationOfStraightLinePassingThroughPointsTests(double abscissaA, double ordinateA, double abscissaB, double ordinateB, double [] expected)
         {
