@@ -54,54 +54,29 @@ namespace MethodsTasks
         }
         public static double[] OutputInAscendingOrder(double numberAd, double numberBd, double numberCd)
         {
-            //TODO: Fix this Bull Shit!!!
-            double[] result = new double[3];
-            if (numberAd > numberBd && numberAd > numberCd)
+            double[] result;
+            double tmp;
+
+            if (numberAd>numberBd)
             {
-                if (numberBd > numberCd)
-                {
-                    result[0] = numberAd;
-                    result[1] = numberBd;
-                    result[2] = numberCd;
-                }
-                else
-                {
-                    result[0] = numberAd;
-                    result[1] = numberCd;
-                    result[2] = numberBd;
-                }
+                tmp = numberAd;
+                numberAd = numberBd;
+                numberBd = tmp;
             }
-            else if (numberBd > numberAd && numberBd > numberCd)
+            if (numberAd > numberCd)
             {
-                if (numberAd > numberCd)
-                {
-                    result[0] = numberBd;
-                    result[1] = numberAd;
-                    result[2] = numberCd;
-                }
-                else
-                {
-                    result[0] = numberBd;
-                    result[1] = numberCd;
-                    result[2] = numberAd;
-                }
+                tmp = numberAd;
+                numberAd = numberCd;
+                numberCd = tmp;
             }
-            else
+            if (numberBd > numberCd)
             {
-                if (numberAd > numberBd)
-                {
-                    result[0] = numberCd;
-                    result[1] = numberAd;
-                    result[2] = numberBd;
-                }
-                else
-                {
-                    result[0] = numberCd;
-                    result[1] = numberBd;
-                    result[2] = numberAd;
-                }
+                tmp = numberBd;
+                numberBd = numberCd;
+                numberCd = tmp;
             }
-            return result;
+
+            return result = new double [3] { numberAd, numberBd, numberCd };
         }
         public static double[] SolveQuadraticEquation(int numberA, int numberB, int numberC)
         {
@@ -113,12 +88,12 @@ namespace MethodsTasks
             }
             else if (discriminant > 0)
             {
-                result[0] = ((-1) * numberB + Math.Sqrt(discriminant)) / (2 * numberA);
-                result[1] = ((-1) * numberB - Math.Sqrt(discriminant)) / (2 * numberA);
+                result[0] = ((double)-numberB + Math.Sqrt(discriminant)) / (2 * numberA);
+                result[1] = ((double)-numberB - Math.Sqrt(discriminant)) / (2 * numberA);
             }
             else
             {
-                result[0] = (-1) * numberB / 2 * numberA;
+                result[0] = ((double)-numberB) / (2 * numberA);
             }
             return result;
         }

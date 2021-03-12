@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MethodsTasks
 {
-    class Loops
+    public class Loops
     {
         public static double Exponentiation(double numberAd, double numberBd)
         {
@@ -35,13 +35,14 @@ namespace MethodsTasks
 
         public static double[] GetNumbersDividedByNumberA(int numberA)
         {
-            double[] array = new double[1000 / numberA];
+            double[] array;
             if (numberA == 0)
             {
                 throw new Exception("Number A can not be equal to 0!!!");
             }
             else
             {
+                array = new double[1000 / numberA];
                 for (int i = numberA, k = 0; i <= 1000; i += numberA)
                 {
                     array[k++] = i;
@@ -70,12 +71,19 @@ namespace MethodsTasks
         public static int GetGreaterDivider(int numberA)
         {
             int divider = 1;
-            for (int i = (numberA - 1); i > 0; i--)
+            if (numberA == 0 || numberA == 1 || numberA == -1)
             {
-                if (numberA % i == 0)
+                throw new ArgumentException("Try insert another argument!!!");
+            }
+            else
+            {
+                for (int i = (Math.Abs(numberA) - 1); i > 0; i--)
                 {
-                    divider = i;
-                    break;
+                    if (numberA % i == 0)
+                    {
+                        divider = i;
+                        break;
+                    }
                 }
             }
 

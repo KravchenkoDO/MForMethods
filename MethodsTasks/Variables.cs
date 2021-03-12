@@ -95,11 +95,5 @@ namespace MethodsTasks
             }
             return result;
         }
-
-        
-
-
-
-
     }
 }
