@@ -139,22 +139,31 @@ namespace MethodsTasks
 
         public static int FindGreatestCommonDividerByEvclidAlgorithm(int numberA, int numberB)
         {
-            while (numberA != numberB)
+            numberB = Math.Abs(numberB);
+            numberA = Math.Abs(numberA);
+            if (numberA == 0 || numberB == 0)
             {
-                if (numberA > numberB)
+                throw new ArgumentException();
+            }
+            else
+            {
+                while (numberA != numberB)
                 {
-                    numberA = numberA - numberB;
-                }
-                else
-                {
-                    numberB = numberB - numberA;
+                    if (numberA > numberB)
+                    {
+                        numberA = numberA - numberB;
+                    }
+                    else
+                    {
+                        numberB = numberB - numberA;
+                    }
                 }
             }
 
             return numberA;
         }
 
-        public static double FindNumberByHalfDivisionMethod(int numberN)
+        public static long FindNumberByHalfDivisionMethod(int numberN)
         {
             long left = 1;
             long right = numberN;
@@ -216,10 +225,11 @@ namespace MethodsTasks
             int part;
             int sumEven;
             int sumOdd;
-            double[] array = new double[numberN / 2 - 1];
+            double[] array;
 
-            ;
-            for (int i = 1, k = 0; i <= numberN; i++)
+            array = numberN == 2 ? new double[numberN / 2] : new double[numberN / 2 -1];
+
+            for (int i = 1, k = 0; i <=numberN; i++)
             {
 
 
@@ -253,7 +263,7 @@ namespace MethodsTasks
 
         }
 
-        public static void HaveTheSameNumerals(int numberA, int numberB)
+        public static string HaveTheSameNumerals(int numberA, int numberB)
         {
             int temp = 0;
             int partA;
@@ -261,7 +271,7 @@ namespace MethodsTasks
             string answer = string.Empty;
             bool findAnswer = false;
 
-            answer = "Oh, no... Oh, no... Oh, no-no-no-no-no...";
+            answer = "NO";
             while ((numberA > 0) && (findAnswer == false))
             {
                 partA = numberA % 10;
@@ -271,15 +281,18 @@ namespace MethodsTasks
                     partB = temp % 10;
                     if (partA == partB)
                     {
-                        answer = "We find it!!! Yes!!!";
+                        answer = "YES";
                         findAnswer = true;
                         break;
                     }
+
                     temp = temp / 10;
                 }
+
                 numberA = numberA / 10;
             }
-            Console.WriteLine(answer);
+
+            return answer;
         }
     }
 }

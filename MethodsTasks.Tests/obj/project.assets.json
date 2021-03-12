@@ -4638,23 +4638,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Pavel\\.nuget\\packages\\": {},
+    "C:\\Users\\Admin\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\DevEdu_practice\\MForMethods\\MethodsTasks.Tests\\MethodsTasks.Tests.csproj",
+      "projectUniqueName": "E:\\DevEduCourses\\MForMethods\\MethodsTasks.Tests\\MethodsTasks.Tests.csproj",
       "projectName": "MethodsTasks.Tests",
-      "projectPath": "E:\\DevEdu_practice\\MForMethods\\MethodsTasks.Tests\\MethodsTasks.Tests.csproj",
-      "packagesPath": "C:\\Users\\Pavel\\.nuget\\packages\\",
-      "outputPath": "E:\\DevEdu_practice\\MForMethods\\MethodsTasks.Tests\\obj\\",
+      "projectPath": "E:\\DevEduCourses\\MForMethods\\MethodsTasks.Tests\\MethodsTasks.Tests.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "E:\\DevEduCourses\\MForMethods\\MethodsTasks.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Pavel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4669,8 +4669,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "E:\\DevEdu_practice\\MForMethods\\MethodsTasks\\MethodsTasks.csproj": {
-              "projectPath": "E:\\DevEdu_practice\\MForMethods\\MethodsTasks\\MethodsTasks.csproj"
+            "E:\\DevEduCourses\\MForMethods\\MethodsTasks\\MethodsTasks.csproj": {
+              "projectPath": "E:\\DevEduCourses\\MForMethods\\MethodsTasks\\MethodsTasks.csproj"
             }
           }
         }

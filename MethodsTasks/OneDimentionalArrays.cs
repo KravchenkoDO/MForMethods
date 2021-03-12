@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MethodsTasks
 {
-    class OneDimentionalArrays
+    public class OneDimentionalArrays
     {
         public static double[] InitializeAndFill(int size)
         {
