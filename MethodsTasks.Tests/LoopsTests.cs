@@ -1,8 +1,7 @@
 ﻿//using I’m_Getting_Too_Old_For_This_Shit;
-using NUnit.Framework;
+
 using System;
-using System.Collections.Generic;
-using System.Text;
+using NUnit.Framework;
 
 namespace MethodsTasks.Tests
 {
@@ -20,21 +19,32 @@ namespace MethodsTasks.Tests
             double actual = Loops.Exponentiation(numberAd, numberBd);
 
             Assert.AreEqual(expected, actual, 0.001);
-            //TODO: Write negative tests "Number A can not be equal to 0 when number B less then 0!!!"
+        }
+
+        [TestCase(0, -5)]
+        public void Exponentiation_WhenAEqualTo0AndBLessThen0_ArgumentExceptionReturned(double numberAd,
+            double numberBd)
+        {
+            Assert.Throws<ArgumentException>(() => Loops.Exponentiation(numberAd, numberBd));
         }
 
         [TestCase(250, new double[] {250, 500, 750, 1000})]
         [TestCase(1000, new double[] {1000})]
         [TestCase(500, new double[] {500, 1000})]
-        //[TestCase(0, new double[] { 0 })] 
 
         public void GetNumbersDividedByNumberATests(int numberAd, double[] expected)
         {
             double[] actual = Loops.GetNumbersDividedByNumberA(numberAd);
 
             Assert.AreEqual(expected, actual);
-            //TODO: Write negative tests "Number A can not be equal to 0!!!"
         }
+
+        [TestCase(0)]
+        public void GetNumbersDividedByNumberA_WhenAEqualTo0_DivideByZeroReturned(int numberAd)
+        {
+            Assert.Throws<DivideByZeroException>(() => Loops.GetNumbersDividedByNumberA(numberAd));
+        }
+
 
         [TestCase(125, 11)]
         [TestCase(144, 11)]
@@ -48,7 +58,6 @@ namespace MethodsTasks.Tests
         }
 
         [TestCase(125, 25)]
-        //[TestCase(1, 1)]
         [TestCase(-10, 5)]
         [TestCase(100, 50)]
 
@@ -57,7 +66,11 @@ namespace MethodsTasks.Tests
             int actual = Loops.GetGreaterDivider(numberA);
 
             Assert.AreEqual(expected, actual);
-            //TODO: write negative test argumentException
+        }
+        [TestCase(0)]
+        public void GetGreaterDivider_WhenAEqualTo0OrTo1OrToMinus1_ArgumentExceptionReturned(int numberA)
+        {
+            Assert.Throws<ArgumentException>(() => Loops.GetGreaterDivider(numberA));
         }
 
         [TestCase(15, 49, 175)]
@@ -85,6 +98,11 @@ namespace MethodsTasks.Tests
             int actual = Loops.FindNumberFibonacci(numberN);
 
             Assert.AreEqual(expected, actual);
+        }
+
+        public void FindNumberFibonacci_WhenNLessThen1_ArgumentExceptionReturned(int numberN)
+        {
+            Assert.Throws<ArgumentException>(() => Loops.FindNumberFibonacci(numberN));
         }
 
         [TestCase(11, 121, 11)]

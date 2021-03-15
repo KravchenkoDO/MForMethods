@@ -1,4 +1,6 @@
 //using I’m_Getting_Too_Old_For_This_Shit;
+
+using System;
 using NUnit.Framework;
 namespace MethodsTasks.Tests
 {
@@ -14,7 +16,27 @@ namespace MethodsTasks.Tests
             double actual = Variables.FindExpressionValue(numberAd, numberBd);
 
             Assert.AreEqual(expected, actual, 0.001d);
-            //TODO: Write negative tests "Parameter B can not be equal parameter A"
+        }
+        [TestCase(12,12)]
+        [TestCase(0.9,0.9)]
+        [TestCase(2.5, 2.5)]
+        [TestCase(0, 0)]
+        public void FindExpressionValue_WhenAEqualToB_ArgumentExceptionReturned (double numberAd, double numberBd)
+        {
+            try
+            {
+                Variables.FindExpressionValue(numberAd, numberBd);
+            }
+            catch (ArgumentException)
+            {
+                Assert.Pass();
+            }
+            catch (Exception)
+            {
+                Assert.Pass();
+            }
+            Assert.Fail();
+
         }
 
         [TestCase(0.0d, 5, 5, 0.0d)]
@@ -43,7 +65,23 @@ namespace MethodsTasks.Tests
             {
                 Assert.AreEqual(expected[i], actual[i], 0.01d);
             }
-            //TODO: Write negative tests "Number B can not be equal to 0"
+        }
+        [TestCase(12,0)]
+        public void DivideTwoNumbersAndReminderOfTheDivision_WhenBEqualToZero_DividiByZeroExceptionReturned(double numberAd, double numberBd)
+        {
+            try
+            {
+                Variables.DivideTwoNumbersAndReminderOfTheDivision(numberAd, numberBd);
+            }
+            catch (DivideByZeroException)
+            {
+                Assert.Pass();
+            }
+            catch (Exception)
+            {
+                Assert.Pass();
+            }
+            Assert.Fail();
         }
 
         [TestCase(2,5,5,0)]
@@ -55,8 +93,27 @@ namespace MethodsTasks.Tests
             double actual = Variables.SolveLinearEquation(numberAd, numberBd, numberCd);
 
             Assert.AreEqual(expected, actual, 0.001d);
-            //TODO: Write negative tests "Number B can not be equal to 0"
         }
+
+        [TestCase(0,5,2)]
+        public void SolveLinearEquation_WhenAEqualToZero_DivideByZeroReturned(double numberAd, double numberBd,
+            double numberCd)
+        {
+            try
+            {
+                Variables.SolveLinearEquation(numberAd, numberBd, numberCd);
+            }
+            catch (DivideByZeroException)
+            {
+                Assert.Pass();
+            }
+            catch (Exception)
+            {
+                Assert.Pass();
+            }
+            Assert.Fail();
+        }
+
 
         [TestCase (1,3,4,3, new double[] {0d, 3d })]
         [TestCase(10, 15, 8, 5, new double[] { 5d, -35d })]
@@ -71,7 +128,22 @@ namespace MethodsTasks.Tests
             {
                 Assert.AreEqual(expected[i], actual[i], 0.01d);
             }
-            //TODO: Write negative tests "Abscissa of point A can't be equal to abscissa of point B"
+        }
+
+        [TestCase(2,4,2,-5)]
+        public void
+            DeriveEquationOfStraightLinePassingThroughPoints_WhenXOfPoinAEqualToXOfPoinB_ArgumentExveptionReturned(
+                double abscissaA, double ordinateA, double abscissaB, double ordinateB)
+        {
+            try
+            {
+                Variables.DeriveEquationOfStraightLinePassingThroughPoints(abscissaA, ordinateA, abscissaB, ordinateB);
+            }
+            catch (ArgumentException e)
+            {
+                Assert.Pass();
+            }
+            Assert.Fail();
         }
     }
 }

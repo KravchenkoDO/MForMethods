@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MethodsTasks
 {
@@ -26,13 +22,13 @@ namespace MethodsTasks
 
             if (discriminant < 0)
             {
-                throw new Exception("Discriminant must be greater or equal to 0");
+                throw new ArgumentException("Discriminant must be greater or equal to 0");
             }
             else return discriminant;
         }
-        public static int SumOrMultiplyOrSubstraction(int numberA, int numberB)
+        public static int SumOrMultiplyOrSubtraction(int numberA, int numberB)
         {
-            int result = 0;
+            int result;
             if (numberA == numberB)
             {
                 result = BranchingStructures.MultiplyTwoNumbers(numberA, numberB);
@@ -44,17 +40,16 @@ namespace MethodsTasks
             }
             return result;
         }
-        public static int DefiningQuarterOnCoordinatePlane(int X, int Y)
+        public static int DefiningQuarterOnCoordinatePlane(int x, int y)
         {
             int planeQuarter;
-            if (X == 0 || Y == 0) planeQuarter = 0;
-            else if (X > 0) planeQuarter = Y > 0 ? 1 : 4;
-            else planeQuarter = Y > 0 ? 2 : 3;
+            if (x == 0 || y == 0) planeQuarter = 0;
+            else if (x > 0) planeQuarter = y > 0 ? 1 : 4;
+            else planeQuarter = y > 0 ? 2 : 3;
             return planeQuarter;
         }
         public static double[] OutputInAscendingOrder(double numberAd, double numberBd, double numberCd)
         {
-            double[] result;
             double tmp;
 
             if (numberAd>numberBd)
@@ -76,7 +71,7 @@ namespace MethodsTasks
                 numberCd = tmp;
             }
 
-            return result = new double [3] { numberAd, numberBd, numberCd };
+            return new[] { numberAd, numberBd, numberCd };
         }
         public static double[] SolveQuadraticEquation(int numberA, int numberB, int numberC)
         {
@@ -84,12 +79,12 @@ namespace MethodsTasks
             int discriminant = BranchingStructures.CalcDiscriminant(numberA, numberB, numberC);
             if (discriminant < 0)
             {
-                throw new Exception("Discriminant must be greater or equal to 0");
+                throw new ArgumentException("Discriminant must be greater or equal to 0");
             }
             else if (discriminant > 0)
             {
-                result[0] = ((double)-numberB + Math.Sqrt(discriminant)) / (2 * numberA);
-                result[1] = ((double)-numberB - Math.Sqrt(discriminant)) / (2 * numberA);
+                result[0] = (-numberB + Math.Sqrt(discriminant)) / (2 * numberA);
+                result[1] = (-numberB - Math.Sqrt(discriminant)) / (2 * numberA);
             }
             else
             {
@@ -105,7 +100,7 @@ namespace MethodsTasks
             string strOnes = string.Empty;
             if (numberInt < 10 || numberInt > 99)
             {
-                throw new Exception("Number must be from 10 to 99 interval");
+                throw new ArgumentOutOfRangeException();
             }
             else if (numberInt < 20)
             {

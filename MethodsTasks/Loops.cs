@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MethodsTasks
 {
@@ -13,7 +9,7 @@ namespace MethodsTasks
             double resultd = 1.0;
             if (numberAd == 0 && numberBd < 0)
             {
-                throw new Exception("Number A can not be equal to 0 when number B less then 0!!!");
+                throw new ArgumentException("Number A can not be equal to 0 when number B less then 0!!!");
             }
             else if (numberBd >= 0)
             {
@@ -38,7 +34,7 @@ namespace MethodsTasks
             double[] array;
             if (numberA == 0)
             {
-                throw new Exception("Number A can not be equal to 0!!!");
+                throw new DivideByZeroException("Number A can not be equal to 0!!!");
             }
             else
             {
@@ -54,7 +50,7 @@ namespace MethodsTasks
 
         public static int FindCountPositiveIntegerElementsThatSquareLessThenNumberA(double numberA)
         {
-            double sqrtA = 0;
+            double sqrtA;
             int counter = 0;
             sqrtA = Math.Sqrt(numberA);
             for (int i = 1; i < sqrtA; i++)
@@ -110,7 +106,6 @@ namespace MethodsTasks
                     if (i % 7 == 0)
                     {
                         summ += i;
-                        ;
                     }
                 }
             }
@@ -122,19 +117,20 @@ namespace MethodsTasks
         {
             int fib = 0;
             int a = 1, b = 1;
+            if (numberN < 1)
+            {
+                throw new ArgumentException();
+            }
 
             if (numberN == 1 || numberN == 2) return 1;
-            else
+            for (int i = 3; i <= numberN; i++)
             {
-                for (int i = 3; i <= numberN; i++)
-                {
-                    fib = a + b;
-                    a = b;
-                    b = fib;
-                }
-
-                return fib;
+                fib = a + b;
+                a = b;
+                b = fib;
             }
+
+            return fib;
         }
 
         public static int FindGreatestCommonDividerByEvclidAlgorithm(int numberA, int numberB)
@@ -187,7 +183,7 @@ namespace MethodsTasks
 
         public static int CountOddNumeralsOfNumber(int numberA)
         {
-            int partOfA = 0;
+            int partOfA;
             int counter = 0;
 
             while (!(numberA == 0))
@@ -207,7 +203,7 @@ namespace MethodsTasks
         public static int FindMirrorNumber(int numberN)
         {
             int mirrorNumber = 0;
-            int part = 0;
+            int part;
 
             while (Math.Abs(numberN) > 0)
             {
@@ -265,10 +261,10 @@ namespace MethodsTasks
 
         public static string HaveTheSameNumerals(int numberA, int numberB)
         {
-            int temp = 0;
+            int temp;
             int partA;
             int partB;
-            string answer = string.Empty;
+            string answer;
             bool findAnswer = false;
 
             answer = "NO";

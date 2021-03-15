@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MethodsTasks
 {
@@ -72,19 +68,18 @@ namespace MethodsTasks
         }
         public static double SumElementsWithOddIndex(double [] array)
         {
-            double SumOdd = 0;
+            double sumOdd = 0;
             for (int i = 1; i < array.Length; i += 2)
             {
-                SumOdd += array[i];
+                sumOdd += array[i];
             }
-            return SumOdd;
+            return sumOdd;
         }
         public static double[] Reverse(ref double[] array)
         {
-            double tmp = 0;
             for (int i = 0; i < array.Length / 2; i++)
             {
-                tmp = array[i];
+                var tmp = array[i];
                 array[i] = array[array.Length - 1 - i];
                 array[array.Length - 1 - i] = tmp;
             }
@@ -104,8 +99,8 @@ namespace MethodsTasks
         }
         public static double[] ReverseHalf(ref double [] array)
         {
-            double tmp = 0;
-            int midle = 0;
+            double tmp;
+            int midle;
             int halfSize = array.Length / 2;
             if (array.Length % 2 == 0)
             {
@@ -123,7 +118,7 @@ namespace MethodsTasks
         }
         public static double[] SortBubble(ref double[] array, bool ascending)
         {
-            double tmp = 0;
+            double tmp;
             if (ascending)
             {
                 for (int i = 0; i < array.Length; i++)
@@ -198,8 +193,8 @@ namespace MethodsTasks
         }
         public static double[] SortInsert(ref double[] array, bool ascending)
         {
-            double tmp = 0;
-            int k = 0;
+            double tmp;
+            int k;
 
             if (ascending)
             {

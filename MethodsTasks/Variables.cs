@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MethodsTasks
 {
@@ -10,29 +6,34 @@ namespace MethodsTasks
     {
         private static double DivideTwoNumbers(double numberAd, double numberBd)
         {
-            double result = 0;
+            double result;
             if (numberBd == 0)
             {
-                throw new Exception("Number B can not be equal to 0");
+                throw new DivideByZeroException("Number B can not be equal to 0");
             }
-            else
-            {
+
                 result = numberAd / numberBd;
-            }
+
             return result;
         }
         private static double ReminderOfTheDivision(double numberAd, double numberBd)
         {
-            double result = 0;
+            double result;
+            if (numberBd == 0)
+            {
+                throw new DivideByZeroException("Number B can not be equal to 0");
+            }
+
             result = numberAd % numberBd;
+
             return result;
         }
         public static double FindExpressionValue(double numberAd, double numberBd)
-        {
-            double resultd = 0;
+        { 
+            double resultd;
             if (numberAd == numberBd)
             {
-                throw new Exception("Parameter B can not be equal parameter A");
+                throw new ArgumentException("Parameter B can not be equal parameter A");
             }
             else
             {
@@ -42,17 +43,17 @@ namespace MethodsTasks
         }
         public static void SwapNumbers(ref double numberAd, ref double numberBd)
         {
-            double numberCd = 0;
+            double numberCd;
             numberCd = numberBd;
             numberBd = numberAd;
             numberAd = numberCd;
         }
         public static double[] DivideTwoNumbersAndReminderOfTheDivision(double numberAd, double numberBd)
         {
-            double[] result = new double[2] { 0, 0 };
+            double[] result = { 0, 0 };
             if (numberBd == 0)
             {
-                throw new Exception("Number B can not be equal to 0");
+                throw new DivideByZeroException("Number B can not be equal to 0");
             }
             else
             {
@@ -63,10 +64,10 @@ namespace MethodsTasks
         }
         public static double SolveLinearEquation(double numberAd, double numberBd, double numberCd)
         {
-            double result = 0;
+            double result;
             if (numberAd == 0)
             {
-                throw new Exception("Number A can not be equal to 0");
+                throw new DivideByZeroException("Number A can not be equal to 0");
             }
             else
             {
@@ -86,7 +87,7 @@ namespace MethodsTasks
 
             if (abscissaA == abscissaB)
             {
-                throw new Exception("Abscissa of point A can't be equal to abscissa of point B");      
+                throw new ArgumentException("Abscissa of point A can't be equal to abscissa of point B");
             }
             else
             {

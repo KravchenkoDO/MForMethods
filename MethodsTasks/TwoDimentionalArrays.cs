@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MethodsTasks
 {
-    class TwoDimentionalArrays
+    public class TwoDimentionalArrays
     {
         public static int[,] InitializeAndFill(int rows, int columns)
         {
